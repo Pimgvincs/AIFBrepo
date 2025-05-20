@@ -1,0 +1,102 @@
+{
+  "id": "person",
+  "endpoint": {
+    "url": "http://localhost:7200/repositories/AIFBrepo",
+    "useAuth": false,
+    "defaultGraph": "https://swapi.co/resource/",
+    "prefixesFile": "SparqlQueriesPrefixes.js"
+  },
+  "sparqlQueriesFile": "SparqlQueriesPerspective2.js",
+  "baseURI": "http://www.aifb.uni-karlsruhe.de",
+  "URITemplate": "<BASE_URI>/Personen/viewPersonOWL/<LOCAL_ID>",
+  "facetClass": "swrc:Person",
+  "resultClasses": {
+    "person": {
+      "instanceConfig": {
+        "propertiesQueryBlock": "PersonInstanceProperties",
+        "instancePageResultClasses": {
+          "instancePageTable": {
+            "tabID": 0,
+            "component": "InstancePageTable",
+            "tabPath": "table",
+            "tabIcon": "CalendarViewDay"
+          }
+        }
+      }
+    }
+  },
+  "properties": [
+    {
+      "id": "name",
+      "valueType": "object",
+      "makeLink": true,
+      "externalLink": false,
+      "sortValues": true,
+      "numberedList": false,
+      "minWidth": 250
+    },
+    {
+      "id": "homepage",
+      "valueType": "object",
+      "makeLink": true,
+      "externalLink": false,
+      "sortValues": true,
+      "numberedList": false,
+      "minWidth": 250
+    },
+    {
+      "id": "phone",
+      "valueType": "object",
+      "makeLink": true,
+      "externalLink": false,
+      "sortValues": true,
+      "numberedList": false,
+      "minWidth": 150
+    },
+    {
+      "id": "fax",
+      "valueType": "object",
+      "makeLink": true,
+      "externalLink": false,
+      "sortValues": true,
+      "numberedList": false,
+      "minWidth": 150
+    },
+    {
+      "id": "affiliation",
+      "valueType": "object",
+      "makeLink": true,
+      "externalLink": false,
+      "sortValues": true,
+      "numberedList": false,
+      "minWidth": 150
+    },
+    {
+      "id": "worksAtProject",
+      "valueType": "object",
+      "makeLink": true,
+      "externalLink": false,
+      "sortValues": true,
+      "numberedList": false,
+      "minWidth": 150
+    },
+    {
+      "id": "publication",
+      "valueType": "object",
+      "makeLink": true,
+      "externalLink": false,
+      "sortValues": true,
+      "numberedList": false,
+      "minWidth": 150
+    },
+    {
+      "id": "type",
+      "valueType": "object",
+      "makeLink": true,
+      "externalLink": false,
+      "sortValues": true,
+      "numberedList": false,
+      "minWidth": 150
+    }
+  ]
+}

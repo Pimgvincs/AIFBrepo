@@ -1,0 +1,57 @@
+{
+  "id": "about",
+  "endpoint": {
+    "url": "http://localhost:7200/repositories/AIFBrepo",
+    "useAuth": false,
+    "defaultGraph": "https://swapi.co/resource/",
+    "prefixesFile": "SparqlQueriesPrefixes.js"
+  },
+  "sparqlQueriesFile": "SparqlQueriesPerspective3.js",
+  "baseURI": "http://www.aifb.uni-karlsruhe.de",
+  "URITemplate": "<BASE_URI>/Forschungsgebiete/viewForschungsgebietOWL/<LOCAL_ID>",
+  "facetClass": "swrc:ResearchTopic",
+  "resultClasses": {
+    "about": {
+      "instanceConfig": {
+        "propertiesQueryBlock": "ReasearchTopicInstanceProperties",
+        "instancePageResultClasses": {
+          "instancePageTable": {
+            "tabID": 0,
+            "component": "InstancePageTable",
+            "tabPath": "table",
+            "tabIcon": "CalendarViewDay"
+          }
+        }
+      }
+    }
+  },
+  "properties": [
+    {
+      "id": "name",
+      "valueType": "object",
+      "makeLink": true,
+      "externalLink": false,
+      "sortValues": true,
+      "numberedList": false,
+      "minWidth": 250
+    },
+    {
+      "id": "dealtWithIn",
+      "valueType": "object",
+      "makeLink": true,
+      "externalLink": false,
+      "sortValues": true,
+      "numberedList": false,
+      "minWidth": 250
+    },
+    {
+      "id": "isWorkedOnBy",
+      "valueType": "object",
+      "makeLink": true,
+      "externalLink": false,
+      "sortValues": true,
+      "numberedList": false,
+      "minWidth": 250
+    }
+  ]
+}

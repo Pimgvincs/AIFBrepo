@@ -1,6 +1,10 @@
 {
     "portalID": "sampo",
     "rootUrl": "",
+    "backend": {
+      "sparqlEndpoint": "http://localhost:7200/repositories/AIFBrepo",
+      "defaultGraph": "https://swapi.co/resource/"
+    },
     "perspectives": {
         "searchPerspectives": [
             "perspective1",
@@ -10,13 +14,12 @@
             "fullTextSearch"
         ],
         "onlyInstancePages": [
-            "manuscripts",
-            "collections",
-            "works",
-            "expressions",
-            "events",
-            "actors",
-            "places"
+            "person",
+            "affiliation",
+            "publication",
+            "project",
+            "organization",
+            "about"
         ]
     },
     "localeConfig": {
@@ -36,16 +39,16 @@
         ]
     },
     "sitemapConfig": {
-        "baseUrl": "https://sampo-ui.demo.seco.cs.aalto.fi",
+        "baseUrl": "http://localhost:7200/repositories/AIFBrepo",
         "langPrimary": "en",
         "langSecondary": "fi",
         "outputDir": "./src/server/sitemap_generator",
-        "sitemapUrl": "https://sampo-ui.demo.seco.cs.aalto.fi/sitemap",
+        "sitemapUrl": "http://localhost:7200/repositories/AIFBrepo",
         "sitemapInstancePageQuery": "sitemapInstancePageQuery"
     },
     "knowledgeGraphMetadataConfig": {
         "showTable": false,
-        "perspective": "perspective1" 
+        "perspective": "perspective1"
     },
     "layoutConfig": {
         "colorPalette": {
@@ -66,7 +69,7 @@
             "logoTextTransform": "none",
             "hideLogoTextOnMobile": true,
             "showLanguageButton": true,
-            "feedbackLink": "https://link.webropolsurveys.com/...",
+            "feedbackLink": "https://seco.cs.aalto.fi/contact/",
             "externalInstructions": false,
             "externalAboutPage": false,
             "reducedHeight": 48,
@@ -127,7 +130,7 @@
         }
     },
     "documentFinderConfig": {
-        "apiURL": "https://data.finlex.fi/document-finder-backend"
+        "apiURL": "http://localhost:3003/api/v1"
     },
     "temporalMapConfig": {
         "sliderDuration": {

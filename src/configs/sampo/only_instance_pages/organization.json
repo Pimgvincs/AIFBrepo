@@ -1,0 +1,48 @@
+{
+  "id": "organization",
+  "endpoint": {
+    "url": "http://localhost:7200/repositories/AIFBrepo",
+    "useAuth": false,
+    "defaultGraph": "https://swapi.co/resource/",
+    "prefixesFile": "SparqlQueriesPrefixes.js"
+  },
+  "sparqlQueriesFile": "SparqlQueriesPerspective4.js",
+  "baseURI": "http://www.aifb.uni-karlsruhe.de",
+  "URITemplate": "<BASE_URI>/Kooperationen/viewOrganizationOWL/<LOCAL_ID>",
+  "facetClass": "swrc:Organization",
+  "resultClasses": {
+    "organization": {
+      "instanceConfig": {
+        "propertiesQueryBlock": "OrganizationInstanceProperties",
+        "instancePageResultClasses": {
+          "instancePageTable": {
+            "tabID": 0,
+            "component": "InstancePageTable",
+            "tabPath": "table",
+            "tabIcon": "CalendarViewDay"
+          }
+        }
+      }
+    }
+  },
+  "properties": [
+    {
+      "id": "name",
+      "valueType": "object",
+      "makeLink": true,
+      "externalLink": false,
+      "sortValues": true,
+      "numberedList": false,
+      "minWidth": 250
+    },
+    {
+      "id": "finances",
+      "valueType": "object",
+      "makeLink": true,
+      "externalLink": false,
+      "sortValues": true,
+      "numberedList": false,
+      "minWidth": 250
+    }
+  ]
+}

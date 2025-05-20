@@ -22,7 +22,7 @@ import yaml from 'js-yaml'
 import querystring from 'querystring'
 
 createBackendSearchConfig().then(backendSearchConfig => {
-  const DEFAULT_PORT = 3001
+  const DEFAULT_PORT = 3003
   const app = express()
   app.set('port', process.env.SAMPO_UI_EXPRESS_PORT || DEFAULT_PORT)
   app.use(bodyParser.json())
@@ -42,6 +42,65 @@ createBackendSearchConfig().then(backendSearchConfig => {
     }
     next()
   })
+  // TEST CONNECTION TO BACKEND SUCH AS GRAPHDB WITH DATATYPE CHECK
+app.get('/api/health-check', async (req, res) => {
+  try {
+    const testQuery = `
+      PREFIX rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#>
+      PREFIX xsd: <http://www.w3.org/2001/XMLSchema#>
+
+      SELECT (COUNT(DISTINCT ?s) AS ?typeCount)
+             (COUNT(DISTINCT ?literal) AS ?datatypeCount)
+      WHERE {
+        {
+          ?s rdf:type ?o .
+        }
+        UNION
+        {
+          ?s ?p ?literal .
+          FILTER(isLiteral(?literal))
+        }
+      } LIMIT 1
+    `;
+
+    const response = await axios.post(
+      'http://localhost:7200/repositories/AIFBrepo',
+      testQuery,
+      {
+        headers: {
+          'Content-Type': 'application/sparql-query',
+          'Accept': 'application/sparql-results+json'
+        }
+      }
+    );
+
+    const bindings = response.data.results.bindings[0] || {};
+
+    res.json({
+      status: 'healthy',
+      graphdb: {
+        endpoint: 'http://localhost:7200/repositories/AIFBrepo',
+        triples_type_count: bindings?.typeCount?.value || 0,
+        triples_literal_count: bindings?.datatypeCount?.value || 0,
+        response_time_ms: response.headers['x-response-time']
+      },
+      sampo_ui: {
+        version: process.env.npm_package_version || 'N/A',
+        status: 'connected'
+      }
+    });
+  } catch (error) {
+    res.status(500).json({
+      status: 'connection_failed',
+      error: error.message,
+      details: {
+        config: error.config,
+        response: error.response?.data
+      }
+    });
+  }
+});
+
 
   // Generate API docs from YAML file with Swagger UI
   let swaggerDocument

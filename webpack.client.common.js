@@ -5,7 +5,7 @@ const { CleanWebpackPlugin } = require('clean-webpack-plugin')
 const webpack = require('webpack')
 
 const outputDirectory = 'dist/public'
-const apiUrl = typeof process.env.API_URL !== 'undefined' ? process.env.API_URL : 'http://localhost:3001/api/v1'
+const apiUrl = typeof process.env.API_URL !== 'undefined' ? process.env.API_URL : 'http://localhost:3003/api/v1'
 const mapboxAccessToken = typeof process.env.MAPBOX_ACCESS_TOKEN !== 'undefined' ? process.env.MAPBOX_ACCESS_TOKEN : 'MAPBOX_ACCESS_TOKEN missing'
 
 module.exports = {
@@ -73,7 +73,8 @@ module.exports = {
     ]
   },
   resolve: {
-    extensions: ['.js', '.jsx']
+    extensions: ['.js', '.jsx'],
+    fallback: { "querystring": false }
   },
   experiments: {
     topLevelAwait: true

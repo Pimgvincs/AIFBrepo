@@ -1,0 +1,219 @@
+{
+  "id": "publication",
+  "endpoint": {
+    "url": "http://localhost:7200/repositories/AIFBrepo",
+    "useAuth": false,
+    "defaultGraph": "https://swapi.co/resource/",
+    "prefixesFile": "SparqlQueriesPrefixes.js"
+  },
+  "sparqlQueriesFile": "SparqlQueriesPerspective1.js",
+  "baseURI": "http://www.aifb.uni-karlsruhe.de",
+  "URITemplate": "<BASE_URI>/Publikationen/viewPublikationOWL/<LOCAL_ID>",
+  "facetClass": "swrc:Publication",
+  "resultClasses": {
+    "publication": {
+      "instanceConfig": {
+        "propertiesQueryBlock": "publicationInstanceProperties",
+        "instancePageResultClasses": {
+          "instancePageTable": {
+            "tabID": 0,
+            "component": "InstancePageTable",
+            "tabPath": "table",
+            "tabIcon": "CalendarViewDay"
+          }
+        }
+      }
+    }
+  },
+  "properties": [
+    {
+      "id": "title",
+      "valueType": "object",
+      "makeLink": true,
+      "externalLink": false,
+      "sortValues": true,
+      "numberedList": false,
+      "minWidth": 250
+    },
+    {
+      "id": "author",
+      "valueType": "object",
+      "makeLink": true,
+      "externalLink": false,
+      "sortValues": true,
+      "numberedList": false,
+      "minWidth": 250
+    },
+    {
+      "id": "editor",
+      "valueType": "object",
+      "makeLink": true,
+      "externalLink": false,
+      "sortValues": true,
+      "numberedList": false,
+      "minWidth": 150
+    },
+    {
+      "id": "chapter",
+      "valueType": "object",
+      "makeLink": true,
+      "externalLink": false,
+      "sortValues": true,
+      "numberedList": false,
+      "minWidth": 150
+    },
+    {
+      "id": "booktitle",
+      "valueType": "object",
+      "makeLink": true,
+      "externalLink": false,
+      "sortValues": true,
+      "numberedList": false,
+      "minWidth": 150
+    },
+    {
+      "id": "journal",
+      "valueType": "object",
+      "makeLink": true,
+      "externalLink": false,
+      "sortValues": true,
+      "numberedList": false,
+      "minWidth": 150
+    },
+    {
+      "id": "series",
+      "valueType": "object",
+      "makeLink": true,
+      "externalLink": false,
+      "sortValues": true,
+      "numberedList": false,
+      "minWidth": 150
+    },
+    {
+      "id": "edition",
+      "valueType": "object",
+      "makeLink": true,
+      "externalLink": false,
+      "sortValues": true,
+      "numberedList": false,
+      "minWidth": 150
+    },
+    {
+      "id": "volume",
+      "valueType": "object",
+      "makeLink": true,
+      "externalLink": false,
+      "sortValues": true,
+      "numberedList": false,
+      "minWidth": 150
+    },
+    {
+      "id": "number",
+      "valueType": "object",
+      "makeLink": true,
+      "externalLink": false,
+      "sortValues": true,
+      "numberedList": false,
+      "minWidth": 150
+    },
+    {
+      "id": "pages",
+      "valueType": "object",
+      "makeLink": true,
+      "externalLink": false,
+      "sortValues": true,
+      "numberedList": false,
+      "minWidth": 150
+    },
+    {
+      "id": "year",
+      "valueType": "object",
+      "makeLink": true,
+      "externalLink": false,
+      "sortValues": true,
+      "numberedList": false,
+      "minWidth": 150
+    },
+    {
+      "id": "month",
+      "valueType": "object",
+      "makeLink": true,
+      "externalLink": false,
+      "sortValues": true,
+      "numberedList": false,
+      "minWidth": 150
+    },
+    {
+      "id": "address",
+      "valueType": "object",
+      "makeLink": true,
+      "externalLink": false,
+      "sortValues": true,
+      "numberedList": false,
+      "minWidth": 150
+    },
+    {
+      "id": "isbn",
+      "valueType": "object",
+      "makeLink": true,
+      "externalLink": false,
+      "sortValues": true,
+      "numberedList": false,
+      "minWidth": 150
+    },
+    {
+      "id": "howpublished",
+      "valueType": "object",
+      "makeLink": true,
+      "externalLink": false,
+      "sortValues": true,
+      "numberedList": false,
+      "minWidth": 150
+    },
+    {
+      "id": "type",
+      "valueType": "object",
+      "makeLink": true,
+      "externalLink": false,
+      "sortValues": true,
+      "numberedList": false,
+      "minWidth": 150
+    },
+    {
+      "id": "abstract",
+      "valueType": "object",
+      "makeLink": true,
+      "externalLink": false,
+      "sortValues": true,
+      "numberedList": false,
+      "minWidth": 150
+    },
+    {
+      "id": "note",
+      "valueType": "object",
+      "makeLink": true,
+      "externalLink": false,
+      "sortValues": true,
+      "numberedList": false,
+      "minWidth": 150
+    },
+    {
+      "id": "hasProject",
+      "valueType": "object",
+      "makeLink": true,
+      "externalLink": false,
+      "sortValues": true,
+      "numberedList": false,
+      "minWidth": 150
+    },
+    {
+      "id": "isAbout",
+      "valueType": "object",
+      "makeLink": true,
+      "externalLink": false,
+      "sortValues": true,
+      "numberedList": false,
+      "minWidth": 150
+    }
+  ]
+}

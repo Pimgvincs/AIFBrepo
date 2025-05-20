@@ -412,22 +412,3 @@ export class Counter {
   }
 }
 
-/**
- export class DefaultDict {
-  proxy;
-
-  constructor (DefaultClass) {
-    this.proxy = new Proxy({}, {
-      get: (target, name) => {
-        if (!(name in target)) {
-          target[name] = new DefaultClass()
-        }
-        return target[name]
-      }
-    })
-    return this.proxy
-  }
-  // Object.keys(dc)
-  // Object.entries(dc)
-}
-*/

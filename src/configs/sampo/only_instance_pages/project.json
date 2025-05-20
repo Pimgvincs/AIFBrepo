@@ -1,0 +1,93 @@
+{
+  "id": "project",
+  "endpoint": {
+    "url": "http://localhost:7200/repositories/AIFBrepo",
+    "useAuth": false,
+    "defaultGraph": "https://swapi.co/resource/",
+    "prefixesFile": "SparqlQueriesPrefixes.js"
+  },
+  "sparqlQueriesFile": "SparqlQueriesProjects.js",
+  "baseURI": "http://www.aifb.uni-karlsruhe.de",
+  "URITemplate": "<BASE_URI>/Projekte/viewProjektOWL/<LOCAL_ID>",
+  "facetClass": "swrc:Project",
+  "resultClasses": {
+    "project": {
+      "instanceConfig": {
+        "propertiesQueryBlock": "projectInstanceProperties",
+        "instancePageResultClasses": {
+          "instancePageTable": {
+            "tabID": 0,
+            "component": "InstancePageTable",
+            "tabPath": "table",
+            "tabIcon": "CalendarViewDay"
+          }
+        }
+      }
+    }
+  },
+  "properties": [
+    {
+      "id": "name",
+      "valueType": "object",
+      "makeLink": true,
+      "externalLink": false,
+      "sortValues": true,
+      "numberedList": false,
+      "minWidth": 150
+    },
+    {
+      "id": "homepage",
+      "valueType": "object",
+      "makeLink": true,
+      "externalLink": false,
+      "sortValues": true,
+      "numberedList": false,
+      "minWidth": 150
+    },
+    {
+      "id": "financedBy",
+      "valueType": "object",
+      "makeLink": true,
+      "externalLink": false,
+      "sortValues": true,
+      "numberedList": false,
+      "minWidth": 150
+    },
+    {
+      "id": "carriedOutBy",
+      "valueType": "object",
+      "makeLink": true,
+      "externalLink": false,
+      "sortValues": true,
+      "numberedList": false,
+      "minWidth": 250
+    },
+    {
+      "id": "isAbout",
+      "valueType": "object",
+      "makeLink": true,
+      "externalLink": false,
+      "sortValues": true,
+      "numberedList": false,
+      "minWidth": 150
+    },
+    {
+      "id": "member",
+      "valueType": "object",
+      "makeLink": true,
+      "externalLink": false,
+      "sortValues": true,
+      "numberedList": false,
+      "minWidth": 250
+    },
+    {
+      "id": "projectInfo",
+      "valueType": "object",
+      "makeLink": true,
+      "externalLink": false,
+      "sortValues": true,
+      "numberedList": false,
+      "minWidth": 150
+    }
+  ]
+}

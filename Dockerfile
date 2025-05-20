@@ -20,10 +20,10 @@ COPY babel.config.js ./
 COPY src ./src
 
 # Run the scripts defined in package.json using build arguments
-RUN npm install && \ 
+RUN npm install && \
 API_URL=$API_URL MAPBOX_ACCESS_TOKEN=$MAPBOX_ACCESS_TOKEN npm run build
 
-EXPOSE 3001
+EXPOSE 3003
 
 # https://github.com/nodejs/docker-node/blob/main/docs/BestPractices.md#non-root-user
 USER node
